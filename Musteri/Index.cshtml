@@ -1,0 +1,31 @@
+﻿@using _10_30.Models.Entity
+@model List<TBLMUSTERILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>MÜŞTERİ ID </th>
+        <th>MÜŞTERİ AD </th>
+        <th>MÜŞTERİ SOYADI </th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    <tbody>
+        @foreach (var mus in Model)
+        {
+        <tr>
+            <td> @mus.MUSTERIID</td>
+            <td> @mus.MUSTERIAD</td>
+            <td> @mus.MUSTERİSOYAD</td>
+            <td><a href="/MUSTERI/SIL/@mus.KATEORIID" class="btn btn-danger">SİL</a> </td>
+            <td><a href="/MUSTERI/MusteriGetir/@mus.KATEORIID" class="btn btn-success">SİL</a> </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/MUSTERI/YeniMusteri/" class="btn btn-primary">YENİ MÜŞTERİ EKLE</a>
+
